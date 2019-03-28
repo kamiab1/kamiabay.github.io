@@ -118,21 +118,21 @@ function Map(svg, stations, trips, sfMap) {
         .attr("r", "2px")
         .attr("fill", "red");
 
-    svg.selectAll("line")
-        .data(toFrom)
-        .enter()
-        .append("line")
-        .attr("stroke", "#ffd479")
-        .attr("x1", function(d) {
-            return projection(latLng[d[0]])[0];
-        })
-        .attr("y1", function(d) {
-            return projection(latLng[d[0]])[1];
-        })
-        .attr("x2", function(d) {
-            return projection(latLng[d[1]])[0];
-        })
-        .attr("y2", function(d) {
-            return projection(latLng[d[1]])[1];
-        });
+//    svg.selectAll("line")
+//        .data(toFrom)
+//        .enter()
+//        .append("line")
+//        .attr("stroke", "#ffd479")
+//        .attr("x1", function(d) {
+//            return projection(latLng[d[0]])[0];
+//        })
+//        .attr("y1", function(d) {
+//            return projection(latLng[d[0]])[1];
+//        })
+//        .attr("x2", function(d) {
+//            return projection(latLng[d[1]])[0];
+//        })
+//        .attr("y2", function(d) {
+//            return projection(latLng[d[1]])[1];
+//        });
 }
