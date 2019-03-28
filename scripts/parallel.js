@@ -53,16 +53,29 @@ function drawParallel(currentTrips) {
 
 
 
-    var keys = Object.keys(currentTrips);
-    // Add blue foreground lines for focus.
-    foreground = par.append("g")
-        .attr("class", "foreground")
-        .selectAll("path")
-        .data(data)
-        .enter().append("path")
-        .attr("d", path)
-        .style("fill",'none' )
-        .style("stroke", 'blue');
+        var keys = Object.keys(currentTrips);
+        // Add blue foreground lines for focus.
+        foreground = par.append("g")
+            .attr("class", "foreground")
+            .selectAll("path")
+            .data(data)
+            .enter().append("path")
+            .attr("d", path)
+            .style("fill",'none' )
+            .style("stroke", function (d) {
+                if (keys.includes(d.date)){
+                    return '#0096ff';
+                }
+
+                return 'white';
+            })
+            .style("opacity", function (d) {
+                if (keys.includes(d.date)){
+                    return 0.7;
+                }
+
+                return 0;
+            });
 
     // Draw the lines
 
