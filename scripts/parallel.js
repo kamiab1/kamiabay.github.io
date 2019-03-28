@@ -154,4 +154,5 @@ function drawParallel(currentTrips) {
     });
 
 }
+
 drawParallel();
